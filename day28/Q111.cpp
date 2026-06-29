@@ -4,31 +4,21 @@ using namespace std;
 
 int main() {
     string name;
-    int accountNo;
-    float balance, deposit, withdraw;
+    int seats;
+    const int ticketPrice = 500;
 
-    cout << "Enter Account Holder Name: ";
+    cout << "Enter Passenger Name: ";
     getline(cin, name);
 
-    cout << "Enter Account Number: ";
-    cin >> accountNo;
+    cout << "Enter Number of Tickets: ";
+    cin >> seats;
 
-    cout << "Enter Initial Balance: ";
-    cin >> balance;
+    int total = seats * ticketPrice;
 
-    cout << "Enter Deposit Amount: ";
-    cin >> deposit;
-    balance += deposit;
-
-    cout << "Enter Withdrawal Amount: ";
-    cin >> withdraw;
-
-    if (withdraw <= balance)
-        balance -= withdraw;
-    else
-        cout << "Insufficient Balance!\n";
-
-    cout << "\nCurrent Balance: " << balance << endl;
+    cout << "\n----- Ticket Details -----\n";
+    cout << "Passenger Name: " << name << endl;
+    cout << "Tickets Booked: " << seats << endl;
+    cout << "Total Amount: " << total << endl;
 
     return 0;
 }
