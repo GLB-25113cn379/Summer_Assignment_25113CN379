@@ -3,28 +3,35 @@
 using namespace std;
 
 int main() {
-    int patientId, age;
-    string patientName, disease;
+    string name;
+    int accountNo;
+    float balance, deposit, withdraw;
 
-    cout << "Enter Patient ID: ";
-    cin >> patientId;
-    cin.ignore();
+    cout << "Enter Account Holder Name: ";
+    getline(cin, name);
 
-    cout << "Enter Patient Name: ";
-    getline(cin, patientName);
+    cout << "Enter Account Number: ";
+    cin >> accountNo;
 
-    cout << "Enter Age: ";
-    cin >> age;
-    cin.ignore();
+    cout << "Enter Initial Balance: ";
+    cin >> balance;
 
-    cout << "Enter Disease: ";
-    getline(cin, disease);
+    cout << "Enter Deposit Amount: ";
+    cin >> deposit;
+    balance += deposit;
 
-    cout << "\n----- Patient Details -----\n";
-    cout << "Patient ID   : " << patientId << endl;
-    cout << "Name         : " << patientName << endl;
-    cout << "Age          : " << age << endl;
-    cout << "Disease      : " << disease << endl;
+    cout << "Enter Withdrawal Amount: ";
+    cin >> withdraw;
+
+    if(withdraw <= balance)
+        balance -= withdraw;
+    else
+        cout << "Insufficient Balance!" << endl;
+
+    cout << "\n----- Account Details -----\n";
+    cout << "Name: " << name << endl;
+    cout << "Account Number: " << accountNo << endl;
+    cout << "Current Balance: " << balance << endl;
 
     return 0;
 }
